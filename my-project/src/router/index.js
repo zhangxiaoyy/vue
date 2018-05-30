@@ -4,6 +4,11 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import Meta from '@/components/meta'
+import Grid from '@/components/iview/Grid'
+import Layout from '@/components/iview/Layout'
+import Button from '@/components/iview/Button'
+import Icon from '@/components/iview/Icon'
+import From from '@/components/iview/From'
 
 Vue.use(Router)
 
@@ -50,6 +55,31 @@ export default new Router({
           'share'
         ]
       }
+    },
+    {
+      path: '/grid',
+      name: 'Grid',
+      component: Grid
+    },
+    {
+      path: '/layout',
+      name: 'Layout',
+      component: Layout
+    },
+    {
+      path: '/button',
+      name: 'Button',
+      component: Button
+    },
+    {
+      path: '/icon',
+      name: 'Icon',
+      component: Icon
+    },
+    {
+      path: '/From',
+      name: 'From',
+      component: From
     }
   ]
 })
