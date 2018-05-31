@@ -3,14 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from 'vuex'
+import store from './vuex/store'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css';
 
+
 Vue.config.productionTip = false
+Vue.use(Vuex)
 Vue.use(iview)
 /* eslint-disable no-new */
 // 页面title
 router.beforeEach((to, from, next) => {
+  // iview实现的加载进度条效果
+  iview.LoadingBar.start();
+
   console.log(to)
   // 获得路由中path路径
   let urlpath = to.matched[0].path.split("/");
@@ -60,9 +67,14 @@ router.beforeEach((to, from, next) => {
   next()
 });
 
+  router.afterEach(route =>{
+    iview.LoadingBar.finish();
+  })
+
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

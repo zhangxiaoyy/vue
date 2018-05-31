@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 // import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import Meta from '@/components/meta'
+import Vuex from '@/components/vuex'
 import Grid from '@/components/iview/Grid'
 import Layout from '@/components/iview/Layout'
 import Button from '@/components/iview/Button'
@@ -80,6 +80,11 @@ export default new Router({
       path: '/From',
       name: 'From',
       component: From
+    },
+    {
+      path: '/vuex',
+      name: 'Vuex',
+      component: Vuex
     }
   ]
 })
